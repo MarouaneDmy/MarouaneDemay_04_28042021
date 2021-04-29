@@ -59,32 +59,31 @@
             <form
               name="reserve"
               action="index.html"
+              id="form"
               method="get"
               onsubmit="return validate();"
             >
-              <div
-                class="formData">
+              <div class="formData">
                 <label>Prénom</label><br>
                 <input
                   class="text-control"
                   type="text"
-                  id="first"
-                  name="first"
+                  id="prenom"
+                  name="prenom"
                   minlength="2"
                 /><br>
               </div>
-              <div
-                class="formData">
+              <div class="formData">
                 <label>Nom</label><br>
                 <input
                   class="text-control"
                   type="text"
-                  id="last"
-                  name="last"
+                  id="nom"
+                  name="nom"
+                  minlength="2"
                 /><br>
               </div>
-              <div
-                class="formData">
+              <div class="formData">
                 <label>E-mail</label><br>
                 <input
                   class="text-control"
@@ -93,8 +92,7 @@
                   name="email"
                 /><br>
               </div>
-              <div
-                class="formData">
+              <div class="formData">
                 <label>Date de naissance</label><br>
                 <input
                   class="text-control"
@@ -103,14 +101,12 @@
                   name="birthdate"
                 /><br>
               </div>
-              <div
-                class="formData">
+              <div class="formData">
                 <label>À combien de tournois GameOn avez-vous déjà participé ?</label><br>
                 <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99">
               </div>
               <p class="text-label">Quelles villes ?</p>
-              <div
-                class="formData">
+              <div class="formData">
                 <input
                   class="checkbox-input"
                   type="radio"
@@ -179,8 +175,7 @@
                 >
               </div>
 
-              <div
-                class="formData">
+              <div class="formData">
                 <input
                   class="checkbox-input"
                   type="checkbox"
@@ -201,6 +196,7 @@
               </div>
               <input
                 class="btn-submit button"
+                id="submit"
                 type="submit"
                 value="C'est parti"
               />
