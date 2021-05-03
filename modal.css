@@ -188,6 +188,12 @@ main {
   margin: 15px auto;
 }
 
+.erreur {
+  font-size: 13px;
+  color: red;
+  text-align: justify;
+}
+
 label {
   font-family: var(--font-default);
   font-size: 17px;
