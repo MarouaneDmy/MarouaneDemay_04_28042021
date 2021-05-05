@@ -22,7 +22,7 @@ modalbg.addEventListener('submit', function (e) {
   var quantity = document.querySelector("#quantity")
   var location = document.querySelector("input[name='location']:checked")
   var mentions = document.querySelector("#checkbox1")
-
+  
   function isValid() {
     if (prenom.value.length >= 2 && nom.value.length >= 2 && email.value.length >= 6 && birthdate.value.length >= 8 && location != null && quantity.value.length >= 1 && mentions.checked){
       alert("Merci ! Votre réservation a été reçue.")
@@ -30,52 +30,52 @@ modalbg.addEventListener('submit', function (e) {
   }
 
   if (prenom.value.length < 2 || prenom.value.length == 0) {
-    erreur = document.getElementById("errPrenom").textContent = "Veuillez entrer 2 caractères ou plus pour le champ du prénom";
+    document.getElementById("errPrenom").textContent = "Veuillez entrer 2 caractères ou plus pour le champ du prénom.";
     e.preventDefault()
   } else {
-    erreur = document.getElementById("errPrenom").textContent = null;
+    document.getElementById("errPrenom").textContent = null;
   }
   
   if (nom.value.length < 2 || nom.value == 0) {
-    erreur = document.getElementById("errNom").textContent = "Veuillez entrer 2 caractères ou plus pour le champ du nom";
+    document.getElementById("errNom").textContent = "Veuillez entrer 2 caractères ou plus pour le champ du nom.";
     e.preventDefault()
   } else {
-    erreur = document.getElementById("errNom").textContent = null;
+    document.getElementById("errNom").textContent = null;
   }
   
   if (email.value.length < 6) {
-    erreur = document.getElementById("errMail").textContent = "Vous devez entrer votre email";
+    document.getElementById("errMail").textContent = "Vous devez entrer votre email.";
     e.preventDefault()
   } else {
-    erreur = document.getElementById("errMail").textContent = null;
+    document.getElementById("errMail").textContent = null;
   }
   
   if (birthdate.value.length < 8) {
-    erreur = document.getElementById("errDate").textContent = "Vous devez entrer votre date de naissance.";
+    document.getElementById("errDate").textContent = "Vous devez entrer votre date de naissance.";
     e.preventDefault()
   } else {
-    erreur = document.getElementById("errDate").textContent = null;
+    document.getElementById("errDate").textContent = null;
   }
 
   if (location != null) {
-    erreur = document.getElementById("errLocation").textContent = null;
+    document.getElementById("errLocation").textContent = null;
   } else {
-    erreur = document.getElementById("errLocation").textContent = "Vous devez valider une option.";
+    document.getElementById("errLocation").textContent = "Vous devez valider une option.";
     e.preventDefault()
   }
   
   if (quantity.value.length < 1) {
-    erreur = document.getElementById("errQuantity").textContent = "Veuillez entrer le nombre de tournois auquel vous avez participé";
+    document.getElementById("errQuantity").textContent = "Veuillez entrer le nombre de tournois auquel vous avez participé.";
     e.preventDefault()
   } else {
-    erreur = document.getElementById("errQuantity").textContent = null;   
+    document.getElementById("errQuantity").textContent = null;   
   }
   
   if (!mentions.checked) {
-    erreur = document.getElementById("errMentions").textContent = "Vous devez vérifier que vous acceptez les termes et conditions.";
+    document.getElementById("errMentions").textContent = "Vous devez vérifier que vous acceptez les termes et conditions.";
     e.preventDefault()
   } else {
-    erreur = document.getElementById("errMentions").textContent = null;
+    document.getElementById("errMentions").textContent = null;
   }
   
   isValid()
