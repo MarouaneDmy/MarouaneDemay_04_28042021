@@ -70,7 +70,7 @@ modalbg.addEventListener('submit', function (e) {
   
   if (formIsValid) {
     closeModal()
-    alert("Merci, votre formulaire est validé !")
+    alert("Merci ! Votre réservation a été reçue.")
   }
     
 })
