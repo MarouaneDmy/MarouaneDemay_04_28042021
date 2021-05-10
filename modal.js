@@ -14,18 +14,6 @@ const modalClose = document.querySelectorAll(".close");
 const formData = document.querySelectorAll(".formData");
 let formIsValid 
 
-function resetErrorMessages() {
-  const errors = document.querySelectorAll(".erreur")
-  for (const error of errors) {
-    error.textContent = "";
-  }
-}
-
-function setErrorMessage(id, message) {
-  document.getElementById(id).textContent = message;
-  formIsValid = false
-}
-
 // Messages d'alertes pour validation du formulaire
 modalbg.addEventListener('submit', function (e) {
   const prenom = document.querySelector("#prenom")
@@ -91,4 +79,15 @@ function closeModal() {
   modalbg.style.display = "none";
 }
 
+function resetErrorMessages() {
+  const errors = document.querySelectorAll(".erreur")
+  for (const error of errors) {
+    error.textContent = "";
+  }
+}
+
+function setErrorMessage(id, message) {
+  document.getElementById(id).textContent = message;
+  formIsValid = false
+}
 
