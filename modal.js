@@ -12,73 +12,66 @@ const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const modalClose = document.querySelectorAll(".close");
 const formData = document.querySelectorAll(".formData");
+let formIsValid 
+
+function resetErrorMessages() {
+  const errors = document.querySelectorAll(".erreur")
+  for (const error of errors) {
+    error.textContent = "";
+  }
+}
+
+function setErrorMessage(id, message) {
+  document.getElementById(id).textContent = message;
+  formIsValid = false
+}
 
 // Messages d'alertes pour validation du formulaire
 modalbg.addEventListener('submit', function (e) {
-  var prenom = document.querySelector("#prenom")
-  var nom = document.querySelector("#nom")
-  var email = document.querySelector("#email")
-  var birthdate = document.querySelector("#birthdate")
-  var quantity = document.querySelector("#quantity")
-  var location = document.querySelector("input[name='location']:checked")
-  var mentions = document.querySelector("#checkbox1")
-  
-  function isValid() {
-    if (prenom.value.length >= 2 && nom.value.length >= 2 && email.value.length >= 6 && birthdate.value.length >= 8 && location != null && quantity.value.length >= 1 && mentions.checked){
-      alert("Merci ! Votre réservation a été reçue.")
-    }
-  }
+  const prenom = document.querySelector("#prenom")
+  const nom = document.querySelector("#nom")
+  const email = document.querySelector("#email")
+  const birthdate = document.querySelector("#birthdate")
+  const quantity = document.querySelector("#quantity")
+  const location = document.querySelector("input[name='location']:checked")
+  const mentions = document.querySelector("#checkbox1")  
+  formIsValid = true
+
+  e.preventDefault()
+  resetErrorMessages()
 
   if (prenom.value.length < 2 || prenom.value.length == 0) {
-    document.getElementById("errPrenom").textContent = "Veuillez entrer 2 caractères ou plus pour le champ du prénom.";
-    e.preventDefault()
-  } else {
-    document.getElementById("errPrenom").textContent = null;
+    setErrorMessage("errPrenom", "Veuillez entrer 2 caractères ou plus pour le champ du prénom.")
   }
   
   if (nom.value.length < 2 || nom.value == 0) {
-    document.getElementById("errNom").textContent = "Veuillez entrer 2 caractères ou plus pour le champ du nom.";
-    e.preventDefault()
-  } else {
-    document.getElementById("errNom").textContent = null;
+    setErrorMessage("errNom", "Veuillez entrer 2 caractères ou plus pour le champ du nom.")
   }
   
   if (email.value.length < 6) {
-    document.getElementById("errMail").textContent = "Vous devez entrer votre email.";
-    e.preventDefault()
-  } else {
-    document.getElementById("errMail").textContent = null;
+    setErrorMessage("errMail", "Vous devez entrer votre email.")
   }
   
   if (birthdate.value.length < 8) {
-    document.getElementById("errDate").textContent = "Vous devez entrer votre date de naissance.";
-    e.preventDefault()
-  } else {
-    document.getElementById("errDate").textContent = null;
+    setErrorMessage("errDate", "Vous devez entrer votre date de naissance.")
   }
 
-  if (location != null) {
-    document.getElementById("errLocation").textContent = null;
-  } else {
-    document.getElementById("errLocation").textContent = "Vous devez valider une option.";
-    e.preventDefault()
+  if (location == null) {
+    setErrorMessage("errLocation", "Vous devez valider une option.")
   }
   
   if (quantity.value.length < 1) {
-    document.getElementById("errQuantity").textContent = "Veuillez entrer le nombre de tournois auquel vous avez participé.";
-    e.preventDefault()
-  } else {
-    document.getElementById("errQuantity").textContent = null;   
-  }
+    setErrorMessage("errQuantity", "Veuillez entrer le nombre de tournois auquel vous avez participé.")
+  } 
   
   if (!mentions.checked) {
-    document.getElementById("errMentions").textContent = "Vous devez vérifier que vous acceptez les termes et conditions.";
-    e.preventDefault()
-  } else {
-    document.getElementById("errMentions").textContent = null;
+    setErrorMessage("errMentions", "Vous devez vérifier que vous acceptez les termes et conditions.")
   }
   
-  isValid()
+  if (formIsValid) {
+    closeModal()
+    alert("Merci, votre formulaire est validé !")
+  }
     
 })
 
