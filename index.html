@@ -70,7 +70,6 @@
                   type="text"
                   id="prenom"
                   name="prenom"
-                  minlength="2"
                 /><br>
                 <span id="errPrenom" class="erreur"></span>
               </div>
@@ -81,7 +80,6 @@
                   type="text"
                   id="nom"
                   name="nom"
-                  minlength="2"
                 /><br>
                 <span id="errNom" class="erreur"></span>
               </div>
@@ -89,10 +87,9 @@
                 <label for="email">E-mail</label><br>
                 <input
                   class="text-control"
-                  type="email"
+                  type="text"
                   id="email"
                   name="email"
-                  minlength="6"
                 /><br>
                 <span id="errMail" class="erreur"></span>
               </div>
@@ -103,14 +100,13 @@
                   type="date"
                   id="birthdate"
                   name="birthdate"
-                  min="1900-01-01"
-                  max="2021-04-30"
+                  min="1920-01-01"
                 /><br>
                 <span id="errDate" class="erreur"></span>
               </div>
               <div class="formData">
                 <label for="quantity">À combien de tournois GameOn avez-vous déjà participé ?</label><br>
-                <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99">
+                <input type="text" class="text-control" id="quantity" name="quantity" min="0" max="99">
                 <span id="errQuantity" class="erreur"></span>
               </div>
               <p class="text-label">Quelles villes ?</p>

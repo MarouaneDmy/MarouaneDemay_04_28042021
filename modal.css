@@ -88,9 +88,26 @@ img {
     display: block;
     text-align: left;
   }
+
+  .fa {
+    margin-top: 18px;
+    color: #FF001B;
+  }
+
+  .topnav {
+    margin-bottom: 0px;
+  }
+
+  .header-logo {
+    margin-top: 14px;
+    margin-left: 20px;
+  }
+
+  img {     
+    width: 103px;
+    height: 19px;
+  }
 }
-
-
 
  @media screen and (max-width: 540px) {
   .topnav a {display: none;}
@@ -99,7 +116,20 @@ img {
     display: block;
     margin-top: -15px;
   }
-} 
+}
+
+@media screen and (max-width: 450px) {
+  .content {
+    margin-top: 70px;
+  } 
+}
+
+@media screen and (min-width: 450px) {
+  .content {
+    margin: 5% auto;
+    padding-top: 10px;
+  } 
+}
 
 main {
   font-size: 130%;
@@ -110,9 +140,6 @@ main {
   padding-right: 2vw;
   margin: 1px 20px 15px;
   border-radius: 2rem;
-  text-align: justify;
-
-
 }
 
 .modal-btn {
@@ -170,7 +197,6 @@ main {
 }
 
 .content {
-  margin: 5% auto;
   width: 100%;
   max-width: 500px;
   animation-name: modalopen;
@@ -180,12 +206,18 @@ main {
   overflow: hidden;
   position: relative;
   color: #fff;
-  padding-top: 10px;
 }
 
 .modal-body {
   padding: 15px 8%;
   margin: 15px auto;
+}
+
+.modal-confirm {
+  display: flex; 
+  justify-content:center; 
+  align-items: center; 
+  height:750px;
 }
 
 .erreur {
@@ -339,6 +371,25 @@ input[data-error]::after {
   cursor: pointer;
   border: 0;
 }
+
+.modal-confirm .btn-submit {
+  margin-top:200px;
+  bottom:30px;
+  right: inherit;
+  top: inherit;
+  width:200px;
+  height:50px;
+  padding:10px;
+  font-size:20px
+}
+
+.modal-confirm h2 {
+  text-align:center; 
+  width:309px; 
+  height:153px; 
+  font-size:36px;
+}
+
 /* custom select styles */
 .custom-select {
   position: relative;
@@ -496,6 +547,7 @@ footer {
   .hero-section {
     display: block;
     box-shadow: unset;
+    min-height: 590px;
   }
   .hero-content {
     background: #fff;
@@ -503,6 +555,8 @@ footer {
     padding: 20px;
     padding-left: 0px;
     padding-right: 0px;
+    padding-bottom: 0px;
+    padding-top: 0px;
     min-width: unset;
     width: 100%;
   }
@@ -513,14 +567,16 @@ footer {
     display: none;
   }
   .hero-headline {
-    font-size: 4.3rem;
+    font-size: 34px;
     white-space: normal;
-    text-align: center;
+    text-align: left;
+    font-weight: bold;
   }
   .hero-text {
     width: unset;
-    font-size: 1.5rem;
-    text-align: center;
+    font-size: 16px;
+    text-align: left;
+    margin-top: 20px;
   }
   .hero-img img {
     border-radius: 10px;
@@ -532,8 +588,9 @@ footer {
     padding: 12px 35px;
   }
   .copyrights {
-    margin-top: 50px;
+    margin-top: 0px;
     text-align: center;
+    font-size: 12px;
   }
 }
 
