@@ -57,7 +57,9 @@ modalbg.addEventListener('submit', function (e) {
   
   if (quantity.value.length < 1) {
     setErrorMessage("errQuantity", "Veuillez entrer le nombre de tournois auquel vous avez participé.", "quantity")
-  } else if (isNaN(quantity.value) || quantity.value < 0 || quantity.value > 99) {
+  } else if (isNaN(quantity.value)) {
+    setErrorMessage("errQuantity", "Veuillez saisir un nombre.", "quantity")
+  } else if (quantity.value < 0 || quantity.value > 99) {
     setErrorMessage("errQuantity", "Veuillez saisir un nombre entre 0 et 99.", "quantity")
   }
   
